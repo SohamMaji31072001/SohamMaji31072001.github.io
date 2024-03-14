@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&family=Poppins:wght@200&display=swap"
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet" />
-    <title>Portfolio</title>
+    <title>GalacticDynamoSimulations</title>
 </head>
 
 <body>
@@ -94,16 +94,146 @@
     <section class="services", id="part-1">
         <div class="container flex items-centre">
             <div class="right flex-1">
-                <h1>Part-1 <span>Me</span></h1>
-                <h3>Hello! I'm CODEWITHRANDOM.</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-                    adipisci distinctio obcaecati aliquid, quia tempora quis optio
-                    repudiandae officia earum? Lorem ipsum dolor sit amet
-                    consectetur, adipisicing elit.
-                </p>
+                <h1>Part-1</h1>
+                <h2>Solving the diffusion equation in ’r’</h2>
+                <button class="button">
+                    <a href="https://drive.google.com/drive/u/1/folders/19fUh8LHw6xUSkSRKqJNcYgwIM2P_SVAB">Github Code</a>
+                </button>
+                <p>The provided code implements the numerical solution of the dynamo equation using the fourth-order Runge-Kutta method. Here's a detailed breakdown:</p>
+
+<ol>
+    <li><strong>Setting Parameters:</strong>
+        <ul>
+            <li>The turbulent magnetic diffusivity (η), maximum radial distance (R<sub>max</sub>), number of grid points (N<sub>grid</sub>), and total time (Total_Time) are specified.</li>
+        </ul>
+    </li>
+    
+    <li><strong>Initialization:</strong>
+        <ul>
+            <li>The radial grid points (r) are generated, and an initial value of the radial magnetic field (B<sub>r</sub>) is set using a sinusoidal function.</li>
+        </ul>
+    </li>
+    
+    <li><strong>Defining Functions:</strong>
+        <ul>
+            <li>Laplacian_of: Computes the radial Laplacian of the magnetic field (B<sub>r</sub>).</li>
+            <li>RK_time_step: Implements the fourth-order Runge-Kutta method to solve the diffusion equation over a time step (Δt).</li>
+        </ul>
+    </li>
+    
+    <li><strong>Numerical Integration:</strong>
+        <ul>
+            <li>The Runge-Kutta method is applied iteratively over multiple time steps to solve the diffusion equation and obtain the evolution of the magnetic field (B<sub>r</sub>) at different radial positions over time.</li>
+        </ul>
+    </li>
+    
+    <li><strong>Plotting Results:</strong>
+        <ul>
+            <li>The evolution of the magnetic field magnitude at select radial positions is plotted over time using Matplotlib.</li>
+        </ul>
+    </li>
+</ol>
+
+<img src="images/output1.png" alt="Image Description" width="800" height="500">
+
+<h2>Exploring the evolution of the magnetic field
+    magnitude and of the exponential decay rate</h2>
+<p>The provided code snippet demonstrates fitting an exponential decay function to the evolution of the magnetic field magnitude over time. Here's a detailed breakdown:</p>
+
+<ol>
+<li><strong>Define Exponential Decay Function:</strong>
+<ul>
+    <li>The function Expo_decay_func is defined to model the exponential decay process, taking time (t), amplitude, and decay rate as parameters.</li>
+</ul>
+</li>
+
+<li><strong>Extract Data:</strong>
+<ul>
+    <li>Time points (Time) and magnetic field magnitude data are extracted from the previously computed evolution of magnetic field.</li>
+</ul>
+</li>
+
+<li><strong>Plotting and Fitting:</strong>
+<ul>
+    <li>For visualization, the evolution of magnetic field magnitude at select radial positions is plotted over time.</li>
+    <li>For each plotted curve, an exponential decay model is fitted to the data using the curve_fit function from SciPy.</li>
+    <li>The fitted exponential decay curve is then plotted along with the original data.</li>
+</ul>
+</li>
+</ol>
+
+<img src="images/output2.png" alt="Image Description" width="800" height="500">
+
+<h2>Exploring the evolution of the spatial solution for
+    Br and Bϕ, and of the pitch angle of the mean
+    magnetic field</h2>
+<p>The provided code snippet demonstrates the numerical solution of the dynamo equation considering both radial (Br) and azimuthal (Bφ) components of the magnetic field. Here's a detailed breakdown:</p>
+
+<ol>
+    <li><strong>Initialization:</strong>
+        <ul>
+            <li>The magnetic field components (Br and Bφ) are initialized using sinusoidal functions at various radial distances (R).</li>
+        </ul>
+    </li>
+    
+    <li><strong>Runge-Kutta Method:</strong>
+        <ul>
+            <li>The function RK_step_diff implements the fourth-order Runge-Kutta method to solve the diffusion equation for both Br and Bφ.</li>
+            <li>The method computes the evolution of Br and Bφ over multiple time steps.</li>
+        </ul>
+    </li>
+    
+    <li><strong>Storage of Evolution:</strong>
+        <ul>
+            <li>Arrays evolution_Br and evolution_Bphi are used to store the evolution of Br and Bφ, respectively, at different time steps.</li>
+        </ul>
+    </li>
+    
+    <li><strong>Plotting Results:</strong>
+        <ul>
+            <li>Two separate plots are generated to visualize the evolution of Br and Bφ over time, respectively.</li>
+            <li>Each plot shows the variation of the magnetic field components at different radial distances for selected time steps.</li>
+        </ul>
+    </li>
+</ol>
+<img src="images/output3.png" alt="Image Description" width="800" height="500">
+<img src="images/output4.png" alt="Image Description" width="800" height="500">
+
+<p>The provided code snippet calculates the pitch angle of the magnetic field vector at different radial positions and time steps. Here's a detailed breakdown:</p>
+
+<ol>
+    <li><strong>Pitch Angle Computation:</strong>
+        <ul>
+            <li>The function compute_pitch_angle computes the pitch angle (p) using the arctan2 function, which is the angle between the azimuthal (Bφ) and radial (Br) components of the magnetic field.</li>
+        </ul>
+    </li>
+    
+    <li><strong>Storage of Evolution:</strong>
+        <ul>
+            <li>An array evolution_pitch_angle is used to store the evolution of the pitch angle at different time steps and radial positions.</li>
+        </ul>
+    </li>
+    
+    <li><strong>Time-stepping Scheme:</strong>
+        <ul>
+            <li>The pitch angle is computed for each time step using the Runge-Kutta method applied to the evolution of the radial and azimuthal components of the magnetic field.</li>
+        </ul>
+    </li>
+    
+    <li><strong>Plotting Results:</strong>
+        <ul>
+            <li>A plot is generated to visualize the spatial solution for the pitch angle at different time steps.</li>
+            <li>The pitch angle is plotted against radial distance (R), showing its evolution over time.</li>
+        </ul>
+    </li>
+</ol>
+<img src="images/output5.png" alt="Image Description" width="800" height="500">
+
+
             </div>
         </div>
+
+
     </section>
 
 </body>
