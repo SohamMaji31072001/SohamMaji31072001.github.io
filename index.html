@@ -67,38 +67,13 @@
         </div>
     </section>
 
-    <section class="services">
-        <div class="container">
-            <h1 class="services-head">A short description of the methods involved in the process of solving the dynamo equations</h1>
-            <div class="card-grid">
-                <div class="card">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="card-inner"><p>Galactic dynamo theory is a conceptual framework aimed at explaining the origin and maintenance of magnetic fields observed in galaxies, including our own Milky Way. It proposes that these magnetic fields are generated and sustained through the dynamo process,</p></div>
-                </div>
-                <div class="card">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="card-inner"></div>
-                </div>
-                <div class="card">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="card-inner"></div>
-                </div>
-
-            </div>
-        </div>
-    </section>
 
     <section class="services", id="part-1">
         <div class="container flex items-centre">
             <div class="right flex-1">
                 <h1>Part-1</h1>
                 <h2>Solving the diffusion equation in ’r’</h2>
-                <button class="button">
-                    <a href="https://github.com/SohamMaji31072001/Galaxy-Dynamo-Simulations/blob/main/SohamMaji_2011162_Task_1_Report.pdf">Task1-Report PDF</a>
-                </button>
+                <button class="bn"><a href="https://github.com/SohamMaji31072001/Galaxy-Dynamo-Simulations/blob/main/SohamMaji_2011162_Task_1_Report.pdf">Task1-Report PDF</a></button>
                 <p>The provided code implements the numerical solution of the dynamo equation using the fourth-order Runge-Kutta method. Here's a detailed breakdown:</p>
 
 <ol>
@@ -235,6 +210,41 @@
 
 
     </section>
+
+    <section class="services", id="part-1">
+        <div class="container flex items-centre">
+            <div class="right flex-1">
+                <h1>Part-2</h1>
+
+                <p style="color: rgb(180, 228, 219);">Galactic dynamo theory seeks to elucidate the origin and evolution of magnetic fields in galaxies. At the heart of this theory lie the <strong>&alpha;</strong> and <strong>&Omega;</strong> effects, which are fundamental mechanisms driving the generation and amplification of magnetic fields.</p>
+
+                <p style="color: rgb(180, 228, 219);">The <strong>&alpha;</strong> effect, often referred to as the alpha effect, arises from the helical motion of fluid elements in the presence of turbulence or differential rotation. It describes the generation of a poloidal magnetic field from a toroidal one through the twisting and stretching of magnetic field lines. In galactic contexts, the <strong>&alpha;</strong> effect is associated with fluid motions such as differential rotation in the disk of spiral galaxies or convection in the interstellar medium. These motions can generate a small-scale magnetic field, which, through the process of turbulent diffusion, can amplify and organize into a large-scale magnetic field.</p>
+
+                <p style="color: rgb(180, 228, 219);">On the other hand, the <strong>&Omega;</strong> effect, or the omega effect, arises from the differential rotation of a galactic disk. It describes the generation of toroidal magnetic fields from poloidal ones due to the differential rotation of the disk. The differential rotation twists the magnetic field lines, leading to the amplification of the magnetic field along the azimuthal direction. This effect is particularly relevant in spiral galaxies, where the differential rotation of the disk provides the necessary shear to amplify and sustain the magnetic field.</p>
+
+                <p style="color: rgb(180, 228, 219);">Together, the <strong>&alpha;</strong> and <strong>&Omega;</strong> effects work in tandem to amplify and sustain the magnetic fields in galaxies. The <strong>&alpha;</strong> effect converts poloidal magnetic fields into toroidal ones, while the <strong>&Omega;</strong> effect amplifies toroidal fields and maintains the overall magnetic structure. This interplay between fluid motions, differential rotation, and magnetic fields is central to the dynamo mechanism, which underlies the observed magnetic properties of galaxies across the universe.</p>
+
+                <h2>Implementing &Omega; and &alpha; effect</h2>
+                <p>This Python code simulates the evolution of a magnetic field in a diffusion process using finite differencing method to solve the equations. Here's a breakdown of what each part does:</p>
+                <ol>
+                    <li><strong>Parameters:</strong> It sets up the parameters for the simulation, including the turbulent magnetic diffusivity (<code>eta_diffusivity</code>), the maximum radial distance (<code>R_max</code>), the number of grid points (<code>Nr</code>), and the time parameters.</li>
+                    <li><strong>Initial Magnetic Field:</strong> It initializes the radial component of the magnetic field (<code>Br</code>) and the azimuthal component of the magnetic field (<code>Bphi</code>) using a Gaussian distribution.</li>
+                    <li><strong>Laplacian Functions:</strong> It defines functions to compute the Laplacian of the radial component of the magnetic field (<code>compute_laplacian_Br</code>) and the Laplacian of the azimuthal component of the magnetic field (<code>compute_laplacian_Bphi</code>).</li>
+                    <li><strong>Evolution Calculation:</strong> It computes the evolution of the magnetic field over time using finite differencing. It iterates over each time step, computes the Laplacians, updates the magnetic field components (<code>Br</code> and <code>Bphi</code>), and stores the evolution at each time step.</li>
+                    <li><strong>Plotting:</strong> It plots the evolution of the radial component (<code>Br</code>) and the azimuthal component (<code>Bphi</code>) of the magnetic field over time at different radial positions.</li>
+                </ol>
+                <img src="images/t2_brwt_2order.png" alt="Image Description" width="800" height="500">
+                <h3>Following figure shows the variation of Br and B_phi with radial distance</h3>
+                <img src="images/t2_brwr_2order.png" alt="Image Description" width="800" height="500">
+                <h3>Following figure shows three Field magnitude growth fitted with the obtained growth values shown</h3>
+                <img src="images/t2_expofit.png" alt="Image Description" width="800" height="500">
+                <h3>Variation of Dynamo number with radius</h3>
+                <img src="images/t2_dynamo.png" alt="Image Description" width="800" height="500">
+</div>
+</div>
+
+
+</section>
 
 </body>
 
