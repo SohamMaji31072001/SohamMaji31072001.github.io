@@ -48,7 +48,7 @@
                     deeper understanding of the universe's captivating dance.
                 </p>
                 <button class="button">
-                    <a href="https://github.com/SohamMaji31072001/Galaxy-Dynamo-Simulations/blob/main/step1_diffusion_equation.ipynb">Github Code</a>
+                    <a href="https://github.com/SohamMaji31072001/Galaxy-Dynamo-Simulations">Github Code</a>
                 </button>
         </div>
     </header>
@@ -245,6 +245,35 @@
 
 
 </section>
+
+<section class="services", id="part-1">
+    <div class="container flex items-centre">
+        <div class="right flex-1">
+            <h1>Part-3</h1>
+
+            <h2>Sensitivity of the solutions on the order of finite differencing</h2>
+            <h2>Effects of Finite Differencing Order</h2>
+            <ul>
+                <li><strong>Accuracy:</strong> The order of finite differencing determines how closely the numerical solution approximates the exact solution of the differential equation. Higher-order finite differencing schemes typically provide more accurate results compared to lower-order schemes. This increased accuracy is achieved by considering more terms in the Taylor series expansion used to derive the finite difference formulas.</li>
+                <li><strong>Spatial Resolution:</strong> Higher-order finite differencing schemes allow for better spatial resolution, meaning they can capture finer details in the solution. This is particularly important in simulations where sharp gradients or intricate structures are present. With higher-order schemes, the grid spacing can be larger while maintaining accuracy, reducing computational costs.</li>
+                <li><strong>Boundary Effects:</strong> Higher-order finite differencing schemes tend to handle boundary effects better than lower-order schemes. They can provide more accurate approximations near boundaries or discontinuities in the solution domain. This is crucial for simulations involving complex geometries or boundary conditions.</li>
+                <li><strong>Stability:</strong> The order of finite differencing can also affect the stability of the numerical solution. In some cases, higher-order schemes may introduce numerical instabilities if not applied carefully. These instabilities can manifest as oscillations or divergent behavior in the solution. Proper treatment of stability issues often requires careful consideration of the numerical scheme and the physical problem being solved.</li>
+                <li><strong>Computational Cost:</strong> Higher-order finite differencing schemes generally require more computational resources (memory and processing time) compared to lower-order schemes. This is because they involve more operations per grid point. However, the increased accuracy and efficiency in capturing the solution may outweigh the additional computational cost in many cases.</li>
+</ul>
+            <p>The following plots shows how the the obtained solutions depends on the order of finite differencing. I have used 2nd order and 4th order finite differencing algorithms. The radial and time plots appears to be similar for both order. However, we see the difference in the fitted growth.</p>
+            <img src="images/t3_brwt_4o.png" alt="Image Description" width="800" height="500">
+            <h3>Following figure shows the variation of Br and B_phi with radial distance</h3>
+            <img src="images/t3_brwr_4o.png" alt="Image Description" width="800" height="500">
+            <h3>Following figures shows three Field magnitude growth fitted with the obtained growth values for 2nd and 4th order finite differencing:</h3>
+            <img src="images/t2_expofit.png" alt="Image Description" width="800" height="500">
+            <img src="images/t3_expofit.png" alt="Image Description" width="800" height="500">
+
+</div>
+</div>
+
+
+</section>
+
 
 </body>
 
